@@ -6,6 +6,9 @@
     <param name="pixel_format" value="yuyv" />
     <param name="camera_frame_id" value="usb_cam" />
     <param name="io_method" value="mmap"/>
+    <!-- enable to see throught the phone -->
+    <!-- <remap from="usb_cam/image_raw" to="/image_raw/" /> --> 
+    <remap from="usb_cam/image_raw" to="/pupil_capture/world" />
   </node>
   <node name="image_view" pkg="image_view" type="image_view" respawn="false" output="screen">
     <remap from="image" to="/usb_cam/image_raw"/>
